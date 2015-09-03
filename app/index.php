@@ -4,7 +4,8 @@ require_once('PhpCrate.class.php');
 $crate = new PhpCrate();
 //$crate->setServers(array("hldk-weave-we-1.cloudapp.net:4200","hldk-weave-ne-2.cloudapp.net:4200","hldk-weave-eu-3.cloudapp.net:4200"));
 //$crate->setServers(array("10.10.10.10:4200","10.10.10.20:4200","10.10.10.30:4200"));
-$crate->setServers(array("192.168.99.101:4201"));
+$crate->setServers(array(getenv("LB_CRATE_ADDR")));
+$crate->setPort(getenv("LB_CRATE_PORT"));
 ?>
 <html lang="en">
 <head>
