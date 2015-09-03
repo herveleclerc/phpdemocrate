@@ -25,15 +25,14 @@ $crate->setPort(getenv("LB_CRATE_PORT"));
  
 <body>
 <?php
-$crate->query("set global stats.enabled = true");
+//$crate->query("set global stats.enabled = true");
 //foreach ($crate->query("select name, hostname from sys.nodes") as $row) {
 //   echo $row['name']." - ".$row['hostname']."<br>";
 //}
-foreach ($crate->query("select _node['name'] as rname, job_id, name, used_bytes from sys.operations order by name") as $row) {
-   echo $row['rname']." - ".$row['name']."<br>";
-}
-$crate->query("set global stats.enabled = false");
-
+//foreach ($crate->query("select _node['name'] as rname, job_id, name, used_bytes from sys.operations order by name") as $row) {
+//   echo $row['rname']." - ".$row['name']."<br>";
+//}
+//$crate->query("set global stats.enabled = false");
 ?>
 <div class="container">
 <div class="row">
